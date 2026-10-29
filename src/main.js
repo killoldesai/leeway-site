@@ -12,6 +12,13 @@
     const open = list.classList.toggle('open');
     btn.setAttribute('aria-expanded', open);
   });
+  if (btn && list) {
+    const close = () => { list.classList.remove('open'); btn.setAttribute('aria-expanded', false); };
+    list.addEventListener('click', (e) => { if (e.target.closest('a')) close(); });
+    d.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    d.addEventListener('click', (e) => { if (!e.target.closest('.nav')) close(); });
+    addEventListener('resize', () => { if (innerWidth > 820) close(); });
+  }
 
   // reveal on scroll
   const els = d.querySelectorAll('.reveal');

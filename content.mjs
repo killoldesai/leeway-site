@@ -296,7 +296,7 @@ const comparePage = (c) => ({
   body: `<section style="padding-top:0"><div class="narrow prose">
 <span class="eyebrow">Compare</span><h1 style="font-size:clamp(2rem,5vw,3.2rem)">${c.h1}</h1>
 <p class="answer">${c.intro}</p>
-<div class="table-wrap reveal"><table><thead><tr><th></th><th>${c.name}</th><th>Leeway</th></tr></thead><tbody>${c.rows.map(([a, b, l]) => `<tr><td><b>${a}</b></td><td class="no">${b}</td><td class="yes">${l}</td></tr>`).join('')}</tbody></table></div>
+<div class="table-wrap reveal"><table><thead><tr><th></th><th>${c.name}</th><th>Leeway</th></tr></thead><tbody>${c.rows.map(([a, b, l]) => `<tr><td><b>${a}</b></td><td class="no" data-label="${c.name}">${b}</td><td class="yes" data-label="Leeway">${l}</td></tr>`).join('')}</tbody></table></div>
 <p class="fineprint">Comparison describes the general approach of each category. Individual apps differ, so check what your current app does.</p>
 ${c.body}
 <p><a href="/features/leeway-days/">See how leeway days work</a> or <a href="/pricing/">view pricing</a>.</p>
