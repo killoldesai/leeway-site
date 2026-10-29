@@ -1,0 +1,7 @@
+{
+  "name": "leeway-website",
+  "private": true,
+  "type": "module",
+  "scripts": { "build": "node build.mjs", "serve": "node serve.mjs", "check": "node check.mjs" },
+  "devDependencies": { "sharp": "^0.34.0" }
+}
